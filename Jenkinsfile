@@ -1,8 +1,7 @@
 pipeline {
-    agent none
+    agent { label 'jenkins-jenkins-slave' }
     stages {        
         stage('Dockerize') {
-            agent any
             steps {
                 sh 'docker build -t thezultimate/docker-demo-react .'
             }
